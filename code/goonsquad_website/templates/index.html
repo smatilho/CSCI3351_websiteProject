@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet" />
+
+{% block title %}Gandalf&#8217s Goon Squad Fan Page{% endblock %}
+
+{% block content %}
+{% comment %} <img class="masthead-avatar mb-5" src="{% static 'theme/assets/img/portfolio/submarine.png'%}" alt="" /> {% endcomment %}
+
+
+<header class="masthead text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        {% comment %} <img class="masthead-avatar mb-5" src="{% static 'img/Andrew-Logo-Rounded.png'%}" alt="" /> {% endcomment %}
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Final Project CSCI-3351-01</h1>
+    </div>
+</header>
+
+<br/>
+
+<h1><center> Home </center></h1>
+
+<div class="divider-custom">
+<div class="divider-custom-line"></div>
+<div class="divider-custom-icon"><i class="fas fa-home"></i></div>
+<div class="divider-custom-line"></div>
+</div>
+
+<section class="page-section">
+    <div class="container">
+            <div class="text-center text-secondary mb-0">
+                <p> 
+                    This website was created for a project in a Python/Script Programming course at the University of New Haven. 
+                    There are several web applications throughout this website, to meet the objective of a personal student website 
+                    for the members of the group. You can navigate throughout the web apps by utlizing the navigation bar at the top 
+                    of the webpage. The about webapp will contain a resume style biography containing various information about each
+                    student in the group, such as research and work experience. The contact page will send an email to the group, that 
+                    may be used by job recruiters or other individuals/groups interested in contacting us. The profile page will show 
+                    personalized information such as interests, about each student in the group. There is also a login/logout web app 
+                    that allows for the users of the website to change their profile information, or to access the admin panel.
+                </p>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+{% endblock %}

@@ -1,0 +1,112 @@
+#main  {
+    padding-top: 74px;
+}
+
+.page-section {
+    padding: 4rem 0;
+}
+
+.page-section .page-section-heading {
+    font-size: 1.5rem;
+    line-height: 1.25rem; 
+}
+
+
+@media (min-width: 992px) {
+    #main {
+      padding-top: 104px;
+    }
+    .page-section .page-section-heading {
+        font-size: 2.25rem;
+        line-height: 2rem;
+    }
+}
+
+@font-face{
+    font-family:"GoonSquad Font";
+    src:
+    url("fonts/jaaapokkisubtract-regular-webfont.woff") format("woff"),
+    url("fonts/Jaapokkisubtract-Regular.otf") format("opentype");
+
+}
+
+
+/*Core Components*/
+
+a {
+    color: #f35a5a;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    color: #f35a5a;
+    text-decoration: underline;
+}
+
+/* NavBar*/
+
+.navbar-brand{
+    font-family:"GoomSquad Font";
+}
+
+.gs-bg-primary {
+   background-color: #f35a5a;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link{
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s, color .2s; 
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+    color: #f35a5a;
+    border-color: #f35a5a;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: white;
+    border-color: #f35a5a;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active:hover {
+    background: none;
+    color: #f35a5a;
+}
+
+
+/* Home */
+.masthead .masthead-avatar{
+    width: 170px;
+    height: 170px;
+}
+
+.masthead {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (min-width: 992px){
+    .masthead{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.masthead {
+    background-image: url("/static/img/cyberbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Contact */
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+    font-size: 1rem;
+}
+
+.floating-label-form-group-with-focus label {
+    color: #f35a5a;
+  }
+

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet" />
+        {% block title %}Login{% endblock %}
+
+    {% block content %}
+            </br>
+            </br>
+            </br>
+            </br>
+            <h2><center> Login </center></h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-sign-in-alt"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <center>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Login</button>
+            </form>
+            </center>
+            </br>
+            </br>
+            </br>
+            </br>
+
+    {% endblock %}
+    

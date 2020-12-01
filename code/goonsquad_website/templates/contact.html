@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-envelope"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+            <div class="text-center text-secondary mb-0">
+                <p>
+                    Welcome to our website! If you have questions or need more information, please email us here!
+                </p>
+                <p>
+                    Andrew Mahr: <a href="mailto:amahr1@unh.newhaven.edu">amahr1@unh.newhaven.edu</a> 
+                </p>
+                <p>
+                    Steven Atilho: <a href="mailto:satil1@unh.newhaven.edu">satil1@unh.newhaven.edu</a> 
+                </p>
+                <p>
+                    Brandon Trundy: <a href="mailto:btrun1@unh.newhaven.edu">btrun1@unh.newhaven.edu</a> 
+                </p>
+                <p>
+                    Andrew Manfredi: <a href="mailto:amanf1@unh.newhaven.edu">amanf1@unh.newhaven.edu</a> 
+                </p>
+                <p>
+                    Colin Dunn: <a href="mailto:cdunn5@unh.newhaven.edu">cdunn5@unh.newhaven.edu</a> 
+                </p>
+            </div>
+
+        <!-- Contact Section Form-->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+
+                {% if success %}
+                <div class="alert alert-success" role="alert">
+                    Your message was sent! Check your inbox for a response.
+                </div>
+                {% endif %}
+
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.non_field_errors }}
+                    </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% for error in field.errors %}
+                            <p class="help-block text-danger">{{error}}</p>
+                            {% endfor %} 
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <br />
+                    <div class="form-group"><button class="btn gs-bg-primary btn-xl text-white" type="submit">Send</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

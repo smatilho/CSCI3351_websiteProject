@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block head %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+{% with profile=user.profile %}
+<div class="profile-page">
+    <div class="page-header header-filter"></div>
+    <div class="main main-raised">
+		<div class="profile-content">
+            <div class="container">
+                <div class="row">
+	                <div class="col-md-6 ml-auto mr-auto">
+        	           <div class="profile">
+	                        <div class="avatar">
+                                <div class="box-1-1">
+                                    <div class="profile-img-container img-raised img-fluid rounded-circle">
+                                        <img src="http://tinygraphs.com/labs/isogrids/hexa/{{user.username}}?theme=seascape&numcolors=4&size=220&fmt=svg" alt="Profile picture">     
+                                    </div>
+                                </div>
+	                        </div>
+	                        <div class="name">
+	                            <h3 class="title">{{ user.get_full_name }} (@{{user.username}})</h3>
+                                {% if profile %}
+                                <h6>{{ profile.persona|default:"" }}</h6>
+                                {% if profile.twitter_url %}
+                                <a href="{{ profile.twitter_url }}" class="btn btn-just-icon btn-link"><i class="fab fa-twitter"></i></a>
+                                {% endif %}
+                                {% if profile.youtube_url %}
+                                <a href="{{ profile.youtube_url }}" class="btn btn-just-icon btn-link"><i class="fab fa-youtube"></i></a>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+	                    </div>
+    	            </div>
+                </div>
+                {% if profile %}
+                <div class="description text-center">
+                    {% with website=profile.website|default:"" %}
+                        <a href="{{website}}">{{ website }}</a>
+                    {% endwith %}
+                </div> 
+                <div class="description text-center">
+                    Interests:
+                    {% for interest in profile.interests.all %}
+                        <span>
+                            {{ interest.name }}{% if not forloop.last %}, {% endif %}
+                        </span>
+                    {% endfor %}
+                </div> 
+                <div class="description text-center">
+                    <p>{{ profile.bio|default:"" }}</p>
+                </div> 
+                {% endif %}
+                <br/>       
+            </div>
+        </div>
+	</div>
+</div>
+{% endwith %}
+{% endblock %}
